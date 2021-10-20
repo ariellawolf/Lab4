@@ -7,7 +7,7 @@ data = cgi.FieldStorage()
 brightness_level = data.getvalue('slider')
 LED = data.getvalue('light')
 dataDump = {"slider":brightness_level, "light":LED}
-with open('led_pwm.txt', 'w') as f:
+with open('led-pwm.txt', 'w') as f:
   json.dump(dataDump,f)
 print('Content-type: text/html\n\n')
 print('<html>')
