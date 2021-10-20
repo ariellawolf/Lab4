@@ -8,7 +8,7 @@ import json
 ledPin1= 13
 ledPin2= 19
 ledPin3= 26
-
+GPIO.cleanup()
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(ledPin1, GPIO.OUT)
 GPIO.setup(ledPin2, GPIO.OUT)
@@ -34,4 +34,4 @@ while True:
     break
   
   time.sleep(0.1)
-GPIO.cleanup()
+
