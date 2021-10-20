@@ -1,5 +1,7 @@
 #!/usr/bin/python37all
 import cgi
+import cgitb
+cgitb.enable()
 import json
 data = cgi.FieldStorage()
 brightness_level = data.getvalue('slider')
