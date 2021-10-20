@@ -10,7 +10,7 @@ ledPin2= 19
 ledPin3= 26
 
 GPIO.setmode(GPIO.BCM)
-GPIO.setwarnings(False)
+
 GPIO.setup(ledPin1, GPIO.OUT)
 GPIO.setup(ledPin2, GPIO.OUT)
 GPIO.setup(ledPin3, GPIO.OUT)
@@ -23,7 +23,7 @@ pwm3= GPIO.PWM(ledPin3, 100)
 while True:
   with open('led-pwm.txt', 'r') as f:
     dataRead= float(json.load(f)) # read duty cycle value from file
-    dutyCycle = int(dataRead['slider'])
+    dutyCycle = float(dataRead['slider'])
     LED = int(dataRead['light'])
   if LED ==1:
     pwm1.ChangeDutyCycle(dutyCycle)
