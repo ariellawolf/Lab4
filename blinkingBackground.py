@@ -20,7 +20,7 @@ pwm3= GPIO.PWM(ledPin3, 100)
 # PWM object on our pin at 100 Hzpwm.start(0) 
 # start with LED off
 while True:
-  with open("led-pwm.txt", 'r') as f:
+  with open('led-pwm.txt;, 'r') as f:
     dataRead= float(json.load(f)) # read duty cycle value from file
     dutyCycle = int(dataRead['slider'])
     LED = int(dataRead['light'])
